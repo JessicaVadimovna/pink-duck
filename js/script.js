@@ -69,6 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Параллакс Эффект
     const parallaxElements = document.querySelectorAll('.parallax');
     
+    // Burger Menu Logic
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("open");
+            navLinks.classList.toggle("active");
+        });
+    }
+
     // Текущие и целевые координаты для плавности (lerp)
     let currentX = 0, currentY = 0;
     let targetX = 0, targetY = 0;

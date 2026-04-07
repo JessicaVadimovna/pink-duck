@@ -1,0 +1,201 @@
+/* NAVBAR (Ретро-Металл: скругленный прямоугольник с внутренними фасками-тенями) */
+.navbar {
+    position: absolute; 
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 60px;
+    border-radius: 20px; 
+    
+    background: linear-gradient(
+        180deg, 
+        #ffffff 0%,    
+        #ffffff 4%,   
+        #e2b5ba 4.1%, 
+        #e6bfc3 15%,   
+        #fce8ea 40%, 
+        #ffffff 50%,  
+        #fce8ea 60%, 
+        #d19597 82%, 
+        #8a5a5e 94%,  
+        #f4c0c4 94.1%,
+        #ffeef0 100%
+    );
+    
+    box-shadow: 
+        inset 0 3px 5px rgba(255, 255, 255, 1), 
+        inset 0 -3px 5px rgba(100, 20, 30, 0.7), 
+        inset 3px 0 4px rgba(255, 255, 255, 0.6), 
+        inset -3px 0 4px rgba(100, 20, 30, 0.4), 
+        0 15px 30px rgba(0, 0, 0, 0.5), 
+        0 0 0 1px rgba(138, 90, 94, 0.6); 
+        
+    display: flex;
+    align-items: center;
+    padding: 0 25px; 
+    z-index: 2000; 
+}
+
+.nav-brand {
+    font-family: 'Pacifico', cursive; 
+    font-size: 34px;
+    font-weight: 400;
+    color: #4a1525;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+
+.nav-duck {
+    height: 110px; /* Сделал уточку побольше для акцента */
+    width: auto;
+    margin-left: 15px; 
+    transform: rotate(-15deg) translateY(10px); /* Небольшой задорный наклон, и уточка сидит чуть ниже */
+    filter: drop-shadow(0 0 15px rgba(255, 6, 86, 1)) drop-shadow(0 0 30px rgba(255, 6, 86, 0.8)) drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3)); 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+    z-index: 2005; 
+    cursor: pointer;
+}
+
+.nav-duck:hover {
+    /* При наведении утка ещё сильнее наклоняется и увеличивается */
+    transform: scale(1.15) rotate(-25deg) translateY(2px);
+    filter: drop-shadow(0 0 20px rgba(255, 6, 86, 1)) drop-shadow(0 0 50px rgba(255, 6, 86, 1)) drop-shadow(0 12px 16px rgba(0, 0, 0, 0.4));
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: clamp(10px, 1.8vw, 25px); 
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end; 
+}
+
+.nav-links li {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2b0b14;
+    font-family: 'Oswald', sans-serif; 
+    font-size: 16px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    padding: 6px 12px;
+    border-radius: 4px; 
+    transition: all 0.3s;
+    white-space: nowrap; 
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: #ff0656; 
+    background: rgba(255, 6, 86, 0.15); 
+    text-shadow: 0 0 8px rgba(255, 6, 86, 0.4);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: #ff0656;
+    box-shadow: 0 0 6px #ff0656, 0 0 12px #ff0656;
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: auto; 
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #2b0b14;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        height: 50px;
+        padding: 0 20px;
+        top: 15px;
+        border-radius: 25px;
+    }
+    
+    .nav-brand {
+        font-size: 20px;
+        margin-right: 0;
+    }
+    
+    .nav-duck {
+        height: 75px; /* Тоже чуть увеличили для мобилок */
+        margin-left: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 101;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        background: linear-gradient(135deg, #e28da2 0%, #a4395a 100%);
+        border-radius: 20px;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255,255,255,0.3);
+        
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .nav-links a {
+        color: #fff; 
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+}

@@ -3,36 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Glow Background</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pink Duck — Frontend Developer Portfolio</title>
+    <meta name="description" content="Frontend developer portfolio. Specialist in UI/UX, React, Next.js and pixel-perfect implementation.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Nunito:wght@800;900&family=Oswald:wght@500;600&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Pixelmania — пиксельный шрифт для заголовка Jessilis -->
+    <link href="https://fonts.cdnfonts.com/css/pixelmania" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/stripes.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/marquee.css">
+    <link rel="stylesheet" href="css/components/about.css">
+    <link rel="stylesheet" href="css/components/skills.css">
+    <link rel="stylesheet" href="css/components/ducks.css">
 </head>
 <body>
-    <!-- Background Gradient -->
+
+    <!-- FIXED BACKGROUND -->
     <div class="bg-gradient"></div>
-
-    <!-- Separate Decorative Elements -->
-    <!-- Top Left Stripes -->
-    <div class="stripe-container tl">
-        <div class="stripe tl-1"></div>
-        <div class="stripe tl-2"></div>
-        <div class="stripe tl-3"></div>
-    </div>
-
-    <!-- Top Right Stripes -->
-    <div class="stripe-container tr">
-        <div class="stripe tr-1"></div>
-        <div class="stripe tr-2"></div>
-        <div class="stripe tr-3"></div>
-        <div class="stripe tr-4"></div>
-    </div>
-
-    <!-- Stars Container (for JS) -->
     <div id="stars-container"></div>
 
-    <!-- CRT Overlays -->
+    <!-- CRT Effects -->
     <div class="crt-scanlines"></div>
     <div class="crt-vignette"></div>
 
-    <script src="script.js"></script>
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <span class="nav-brand">Jessilis</span>
+        <img src="assets/img/duck.png" alt="Duck" class="nav-duck">
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#skills" class="nav-item">Tech Stack</a></li>
+            <li><a href="#projects" class="nav-item">Projects</a></li>
+            <li><a href="#contact" class="nav-item">Contact Me</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <div class="hero-wrapper">
+
+        <!-- Diagonal Stripes Top-Left -->
+        <div class="stripe-container tl">
+            <div class="stripe tl-1"></div>
+            <div class="stripe tl-2"></div>
+            <div class="stripe tl-3"></div>
+            <div class="stripe tl-4"></div>
+        </div>
+
+        <!-- Diagonal Stripes Bottom-Right -->
+        <div class="stripe-container tr">
+            <div class="stripe tr-1"></div>
+            <div class="stripe tr-2"></div>
+            <div class="stripe tr-3"></div>
+            <div class="stripe tr-4"></div>
+        </div>
+
+        <!-- Утка в короне (теперь отдельно, чтобы не пропадала) -->
+        <img src="assets/img/duck_crown.png" alt="Утка в короне" class="duck-crown">
+
+
+        <!-- Duck with Glasses (Right side, parallax) -->
+        <div class="duck-glasses-wrapper parallax" data-speed="0.03">
+            <img src="assets/img/duck_glasses.png" alt="Duck with Glasses">
+            <div class="duck-sparkle"></div>
+        </div>
+
+        <!-- Hero Text (Left side) -->
+        <div class="hero-section">
+            <h1 class="hero-title shiny-text">JessiLis</h1>
+            <p class="hero-subtitle">Frontend Developer<span class="pink-cursor"></span></p>
+            <div class="hero-bio">
+                <p>Превращаю идеи в живые, красивые и отзывчивые веб-приложения.</p>
+                <p>Специализируюсь на <span class="highlight-tech">React</span>, <span class="highlight-tech">Next.js</span> и анимациях, которые хочется трогать.</p>
+            </div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary" id="hero-btn-contact">Let's Talk</a>
+                <a href="#projects" class="btn btn-secondary" id="hero-btn-projects">View Work</a>
+            </div>
+        </div>
+
+        <!-- Holographic Marquee (Bottom) -->
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <span class="marquee-item">🦆 UI/UX DESIGN</span>
+                <span class="marquee-item">🦆 REACT</span>
+                <span class="marquee-item">🦆 NEXT.JS</span>
+                <span class="marquee-item">🦆 TYPESCRIPT</span>
+                <span class="marquee-item">🦆 ANIMATIONS</span>
+                <span class="marquee-item">🦆 FRONTEND</span>
+                <span class="marquee-item">🦆 UI/UX DESIGN</span>
+                <span class="marquee-item">🦆 REACT</span>
+                <span class="marquee-item">🦆 NEXT.JS</span>
+                <span class="marquee-item">🦆 TYPESCRIPT</span>
+                <span class="marquee-item">🦆 ANIMATIONS</span>
+                <span class="marquee-item">🦆 FRONTEND</span>
+            </div>
+        </div>
+
+    </div><!-- end .hero-wrapper -->
+
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="about-section">
+        <div class="about-card">
+
+            <!-- Masking Tape Decorations -->
+            <div class="tape tape-v1 top-left"></div>
+            <div class="tape tape-v2 top-right"></div>
+            <div class="tape tape-v3 bottom-left"></div>
+            <div class="tape tape-v1 bottom-right"></div>
+
+            <!-- CRT Overlay -->
+            <div class="about-crt-overlay"></div>
+
+            <!-- Text Content -->
+            <div class="about-content">
+                <h2 class="about-title">ABOUT ME</h2>
+                <div class="about-text">
+                    <p>Привет! Я Джессика — frontend-разработчик с глубокой любовью к детально проработанным интерфейсам. Верю, что каждый пиксель имеет значение.</p>
+                    <p>Специализируюсь на React, Next.js и современных CSS-техниках. Умею превращать дизайн-макеты в живые, отзывчивые и красивые веб-приложения.</p>
+                    <p>Когда не пишу код — рисую, слушаю lo-fi и общаюсь с резиновыми уточками. 🦆</p>
+                </div>
+            </div>
+
+            <!-- Overflow Image -->
+            <div class="about-image-container">
+                <img src="assets/img/duck-pc.png" alt="Duck with PC" class="about-comp-img">
+            </div>
+
+            <!-- Duck on cloud (hangs below About section) -->
+            <div class="decor-layer">
+                <img src="assets/img/duck_cloud.png" alt="Duck on cloud" class="duck-cloud-left">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== TECH STACK ===================== -->
+    <section id="skills" class="skills-section">
+        <h2 class="skills-title">TECH STACK</h2>
+        <div class="skills-grid">
+
+            <!-- 1. HTML -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg" alt="HTML5"></div>
+                <p class="skill-name">HTML</p>
+            </div>
+
+            <!-- 2. CSS (+ Толпа уточек) -->
+            <div class="skill-card">
+                <img src="assets/img/ducks.png" class="skills-ducks-overlay" alt="Ducks Walking">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg" alt="CSS3"></div>
+                <p class="skill-name">CSS</p>
+            </div>
+
+            <!-- 3. JavaScript -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" alt="JavaScript"></div>
+                <p class="skill-name">JavaScript</p>
+            </div>
+
+            <!-- 4. TypeScript -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/typescript.svg" alt="TypeScript"></div>
+                <p class="skill-name">TypeScript</p>
+            </div>
+
+            <!-- 5. React -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg" alt="React"></div>
+                <p class="skill-name">React</p>
+            </div>
+
+            <!-- 6. Next.js (+ Уточка-студент) -->
+            <div class="skill-card">
+                <img src="assets/img/duck_student.png" class="skills-duck-student" alt="Duck Student">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg" alt="Next.js"></div>
+                <p class="skill-name">Next.js</p>
+            </div>
+
+            <!-- 7. Tailwind -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tailwindcss.svg" alt="Tailwind CSS"></div>
+                <p class="skill-name">Tailwind</p>
+            </div>
+
+            <!-- 8. Git -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg" alt="Git"></div>
+                <p class="skill-name">Git</p>
+            </div>
+
+            <!-- 9. Figma -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/figma.svg" alt="Figma"></div>
+                <p class="skill-name">Figma</p>
+            </div>
+
+            <!-- 10. Node.js -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" alt="Node.js"></div>
+                <p class="skill-name">Node.js</p>
+            </div>
+
+            <!-- 11. REST API -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/insomnia.svg" alt="REST API"></div>
+                <p class="skill-name">REST API</p>
+            </div>
+
+            <!-- 12. Vite -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vite.svg" alt="Vite"></div>
+                <p class="skill-name">Vite</p>
+            </div>
+
+            <!-- 13. SASS -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sass.svg" alt="SASS"></div>
+                <p class="skill-name">SASS</p>
+            </div>
+
+            <!-- 14. Redux -->
+            <div class="skill-card">
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/redux.svg" alt="Redux"></div>
+                <p class="skill-name">Redux</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
 </body>
 </html>

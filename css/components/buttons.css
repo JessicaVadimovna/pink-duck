@@ -1,0 +1,110 @@
+/* HERO BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif; /* Возвращаем шрифт как в навигации */
+    font-size: 16px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 34px;
+    border-radius: 20px; /* Как у навигации */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Унифицированный стиль кнопок — Полная копия навигации (Розовое Золото) */
+.btn-primary, .btn-secondary {
+    background: linear-gradient(
+        180deg, 
+        #ffffff 0%,    
+        #ffffff 4%,   
+        #e2b5ba 4.1%, 
+        #e6bfc3 15%,   
+        #fce8ea 40%, 
+        #ffffff 50%,  
+        #fce8ea 60%, 
+        #d19597 82%, 
+        #8a5a5e 94%,  
+        #f4c0c4 94.1%,
+        #ffeef0 100%
+    );
+    color: #2b0b14; 
+    border: none; /* Убираем бордер с самой кнопки */
+    
+    /* Оставляем только внутренние фаски на кнопке */
+    box-shadow: 
+        inset 0 3px 5px rgba(255, 255, 255, 1), 
+        inset 0 -3px 5px rgba(100, 20, 30, 0.7), 
+        inset 3px 0 4px rgba(255, 255, 255, 0.6), 
+        inset -3px 0 4px rgba(100, 20, 30, 0.4),
+        0 10px 30px rgba(0, 0, 0, 0.4); 
+        
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+}
+
+/* Создаем "парящую" рамку с зазором */
+.btn-primary::after, .btn-secondary::after {
+    content: "";
+    position: absolute;
+    /* Уходим за пределы кнопки, создавая темный зазор */
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 2px solid #ff0656;
+    border-radius: 26px; /* Чуть больше чем 20px, чтобы кривизна совпадала */
+    pointer-events: none;
+    
+    /* Переносим внешнее свечение на эту рамку */
+    box-shadow: 
+        0 0 40px rgba(255, 6, 86, 0.5), 
+        0 0 15px rgba(255, 6, 86, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover::after, .btn-secondary:hover::after {
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-color: #ff3e7e;
+    box-shadow: 
+        0 0 60px rgba(255, 6, 86, 0.8), 
+        0 0 25px rgba(255, 6, 86, 0.5);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    color: #ff0656; 
+    text-shadow: 0 0 15px rgba(255, 6, 86, 0.6);
+}
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        gap: 15px; /* Увеличили зазор между кнопками для удобства нажатия пальцем */
+        flex-direction: column; 
+        align-items: center; /* Центруем кнопки */
+        width: 100%;
+        margin-top: auto; 
+    }
+    
+    .hero-buttons .btn {
+        padding: 16px 20px; /* Увеличили тап-зону */
+        font-size: 15px;
+        width: 100%; 
+        max-width: 320px; /* Чтобы кнопки не расползались слишком широко на телефонах */
+        text-align: center;
+        display: flex; /* Центруем слово внутри кнопки */
+        justify-content: center;
+        align-items: center;
+    }
+}

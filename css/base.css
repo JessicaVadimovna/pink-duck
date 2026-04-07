@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #12001c;
+    font-family: sans-serif;
+    color: white;
+    overflow-x: hidden; /* Обрезаем полоски у края экрана, нет ширины которая пролезает */
+}
+
+/* Background Gradients */
+.bg-gradient {
+    position: fixed; /* Фон стоит на месте, пока контент скроллится */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+        radial-gradient(circle at 50% 20%, #290033 0%, #17001c 60%, #100014 100%),
+        linear-gradient(to bottom, transparent 60%, #7d0046 85%, #ff0656 100%);
+    background-blend-mode: screen;
+    z-index: -10;
+}
+
+/* Stars Parallax Container */
+#stars-container {
+    position: fixed; /* Звёзды также остаются на весь экран, пока мы скроллим контент */
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 6; 
+    pointer-events: none; 
+}
+
+/* Star Styles */
+.star-wrapper {
+    position: absolute;
+    filter: drop-shadow(0 0 10px rgba(255, 102, 204, 0.8)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+    animation: blink infinite alternate ease-in-out;
+}
+
+.star-shape {
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff66cc" d="M12 2l2.45 7.55L22 9.55l-6.1 4.43L18.25 21.5 12 16.96 5.75 21.5l2.35-7.52L2 9.55l7.55-.01z"/></svg>') no-repeat center center;
+    background-size: contain;
+}
+
+.tiny-star {
+    position: absolute;
+    border-radius: 50%;
+    background: #ff99dd;
+    box-shadow: 0 0 5px #ff66cc;
+}
+
+@keyframes blink {
+    0% { transform: scale(0.85); opacity: 0.5; filter: drop-shadow(0 0 5px rgba(255, 102, 204, 0.4)); }
+    100% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 15px rgba(255, 102, 204, 1)) drop-shadow(0 0 8px #fff); }
+}

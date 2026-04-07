@@ -1,0 +1,304 @@
+/* ================= ABOUT SECTION ================= */
+.about-section {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    /* Приходит сразу за .hero-wrapper высотой 100vh. Даём небольшой отступ сверху для воздуха */
+    margin: 80px auto 150px auto;
+    z-index: 10;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+/* Сама рамка (Неоновая плашка) */
+.about-card {
+    position: relative;
+    border: 3px solid #ff0656;
+    border-radius: 12px;
+    /* Темный фиолетовый фон с прозрачностью и размытием по Гауссу */
+    background: rgba(30, 0, 40, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Свечение: вовнутрь и наружу */
+    box-shadow: 
+        inset 0 0 25px rgba(255, 6, 86, 0.4),
+        0 0 35px rgba(255, 6, 86, 0.6);
+        
+    padding: 50px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* --- CRT ЭФФЕКТ "РОЗОВОЕ ЗОЛОТО" --- */
+.about-crt-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5; /* Ниже контента, но выше фона */
+    
+    /* Крупные сканлинии в цвете розового золота */
+    background: repeating-linear-gradient(
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 4px,
+        rgba(224, 191, 184, 0.05) 5px,
+        rgba(183, 110, 121, 0.08) 6px
+    );
+    
+    /* Эффект мерцания и бегущей строки */
+    overflow: hidden;
+    border-radius: 12px; /* Чтобы сканлинии не вылезали за скругленные углы карточки */
+}
+
+.about-crt-overlay::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Мягкая бегущая полоса света */
+    background: linear-gradient(
+        rgba(241, 158, 184, 0) 0%,
+        rgba(241, 158, 184, 0.1) 50%,
+        rgba(241, 158, 184, 0) 100%
+    );
+    animation: about-scanline 10s linear infinite;
+}
+
+@keyframes about-scanline {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+/* ================= СКОТЧИ (TAPE) ================= */
+/* ================= СКОТЧИ (TAPE) ================= */
+.tape {
+    position: absolute;
+    width: 170px; /* Сделал длиннее */
+    height: 40px;
+    background: rgba(224, 191, 184, 0.25); /* Нежный оттенок Розового Золота */
+    z-index: 100;
+    pointer-events: none;
+    
+    /* Эффект глянца: градиент-блик и легкий градиент основы */
+    background-image: 
+        linear-gradient(120deg, transparent 40%, rgba(255, 220, 230, 0.5) 50%, transparent 60%),
+        repeating-linear-gradient(45deg, rgba(183, 110, 121, 0.05) 0px, rgba(183, 110, 121, 0.05) 2px, transparent 2px, transparent 4px);
+    
+    backdrop-filter: blur(2px); /* Эффект матового стекла/пластика */
+    -webkit-backdrop-filter: blur(2px);
+    
+    /* Глянцевые тени и блики с оттенком розового золота */
+    box-shadow: 
+        0 4px 10px rgba(0, 0, 0, 0.3),
+        inset 0 0 15px rgba(241, 158, 184, 0.2);
+    
+    border: 1px solid rgba(241, 158, 184, 0.4);
+}
+
+/* --- ВАРИАНТЫ РАЗРЫВА (CLIP-PATH) --- */
+
+/* Сильно рваные края с обеих сторон */
+.tape-v1 {
+    clip-path: polygon(
+        5% 0%, 95% 2%, 100% 20%, 97% 40%, 100% 60%, 95% 85%, 100% 100%,
+        5% 98%, 0% 80%, 3% 50%, 0% 20%
+    );
+}
+
+/* Мелко "погрызенный" край */
+.tape-v2 {
+    clip-path: polygon(
+        0% 5%, 20% 0%, 40% 4%, 60% 0%, 80% 3%, 100% 0%,
+        98% 30%, 100% 60%, 97% 90%, 100% 100%,
+        80% 97%, 60% 100%, 40% 96%, 20% 100%, 0% 95%,
+        3% 70%, 0% 40%, 2% 10%
+    );
+}
+
+/* Диагональный неровный срез */
+.tape-v3 {
+    clip-path: polygon(
+        2% 10%, 90% 0%, 100% 15%, 95% 45%, 100% 80%, 85% 100%,
+        10% 95%, 0% 70%, 5% 40%, 0% 15%
+    );
+}
+
+/* --- РАСПОЛОЖЕНИЕ --- */
+.tape.top-left {
+    top: 5px;
+    left: -30px;
+    transform: rotate(-35deg);
+    width: 180px;
+}
+
+.tape.top-right {
+    top: 5px;
+    right: -30px;
+    transform: rotate(35deg);
+    width: 160px;
+}
+
+.tape.bottom-left {
+    bottom: 5px;
+    left: -35px;
+    transform: rotate(30deg);
+    width: 190px;
+}
+
+.tape.bottom-right {
+    bottom: 8px;
+    right: -35px;
+    transform: rotate(-30deg);
+    width: 150px;
+}
+
+
+/* ================= КОНТЕНТ ВНУТРИ ================= */
+.about-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.about-title {
+    font-family: 'Oswald', sans-serif; /* Вернули старый шрифт */
+    font-size: 32px; 
+    font-weight: 600;
+    color: #ffffff; /* Вернули старый цвет */
+    margin-bottom: 30px; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px; /* Чуть ближе к тексту */
+    left: 0;
+    width: 100%; /* Теперь на весь заголовок */
+    height: 6px;
+    background: #ff0080;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.6);
+}
+
+.about-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffd9f0;
+    text-align: justify;
+    max-width: none; /* Возвращено к полному заполнению карточки */
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ================= КАРТИНКА, ВЫЛАЗЯЩАЯ ЗА ГРАНЬ ================= */
+.about-image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Прижимаем к низу плашки */
+    width: 100%;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 30px;
+    max-width: 1200px; /* Было 900, теперь 1200 для всей ширины */
+    margin: 0 auto;
+    position: relative; /* Для позиционирования уточек */
+}
+
+/* Уточки, которые идут по карточкам */
+.skills-ducks-overlay {
+    position: absolute;
+    top: -65px;
+    left: 80px;
+    height: 120px;
+    z-index: 100;
+    pointer-events: none;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+    animation: duck-walk-hover 3s ease-in-out infinite;
+}
+
+@keyframes duck-walk-hover {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.about-comp-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    /* Вот магия: картинка лежит в контейнере, но сдвигается вверх, вылезая за рамку */
+    margin-top: -120px; 
+    position: relative;
+    z-index: 15; /* Поверх рамки, но под скотчами (если скотч на ее месте) */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
+}
+
+/* ================= АДАПТИВ (1024px и ниже) ================= */
+@media (max-width: 1024px) {
+    .about-card {
+        padding: 40px 30px;
+    }
+    .about-content {
+        max-width: 55%;
+    }
+}
+
+/* ================= МОБИЛКИ (768px и ниже) ================= */
+@media (max-width: 768px) {
+    .about-section {
+        margin-top: 100vh; /* На мобилке скроллить меньше */
+    }
+    
+    .about-card {
+        flex-direction: column; /* Текст и картинка друг под другом */
+        padding: 30px 20px;
+        gap: 20px;
+    }
+    
+    .about-content {
+        max-width: 100%;
+    }
+    
+    .about-text {
+        font-size: 14px;
+        text-align: left;
+    }
+    
+    .about-comp-img {
+        max-width: 80%; /* Уменьшаем на мобилках */
+        margin-top: 0; /* На мобилках картинка встанет вниз без "вылезания", иначе закроет текст сверху */
+        margin-bottom: -15px; /* Зато пусть чуть вылезает вниз! */
+    }
+
+    /* Скотчи делаем поменьше для мобилок */
+    .tape {
+        width: 100px;
+        height: 30px;
+    }
+    .tape.top-left { top: 5px; left: -20px; width: 140px; }
+    .tape.top-right { top: 5px; right: -20px; width: 120px; }
+    .tape.bottom-left { bottom: 5px; left: -20px; width: 150px; }
+    .tape.bottom-right { bottom: 5px; right: -20px; width: 115px; }
+
+
+
+}

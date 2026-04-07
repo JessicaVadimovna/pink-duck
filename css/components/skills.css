@@ -1,0 +1,221 @@
+.skills-section {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto 120px auto;
+    z-index: 10;
+    text-align: center;
+}
+
+.skills-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(255, 6, 86, 0.6);
+    position: relative;
+    display: inline-block;
+}
+
+.skills-title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px; /* Чуть ближе к тексту */
+    left: 0;
+    width: 100%; /* Теперь на весь заголовок */
+    height: 6px;
+    background: #ff0080;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.6);
+}
+
+/* Сетка навыков */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* КАРТОЧКА НАВЫКА (Стиль: Розовое Золото + Неон) */
+.skill-card {
+    position: relative; /* Чтобы уточки внутри могли позиционироваться */
+    width: 100%;
+    border-radius: 20px; 
+    
+    /* Тот самый 12-ступенчатый градиент "Розовое Золото" */
+    background: linear-gradient(
+        180deg, 
+        #ffffff 0%,    
+        #ffffff 4%,   
+        #e2b5ba 4.1%, 
+        #e6bfc3 15%,   
+        #fce8ea 40%, 
+        #ffffff 50%,  
+        #fce8ea 60%, 
+        #d19597 82%, 
+        #8a5a5e 94%,  
+        #f4c0c4 94.1%,
+        #ffeef0 100%
+    );
+    
+    /* ГИПЕР-НЕОН (Белый + Ярко-розовый + Нежно-розовый) */
+    box-shadow: 
+        inset 0 2px 3px rgba(255, 255, 255, 0.9), 
+        inset 0 -2px 3px rgba(100, 20, 30, 0.5), 
+        0 0 8px #ffffff,                /* Белое ядро */
+        0 0 15px #ff0080,               /* Яркий розовый */
+        0 0 30px #ff66b2,               /* Нежно-розовый отлив */
+        0 15px 35px rgba(0, 0, 0, 0.8);
+    
+    /* Тонкий контур свечения (Розовый) */
+    filter: drop-shadow(0 0 6px rgba(255, 0, 128, 0.6));
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    cursor: default;
+    overflow: visible; 
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 
+        inset 0 3px 5px rgba(255, 255, 255, 1), 
+        0 0 15px #ffffff,
+        0 0 30px #ff0080, 
+        0 0 55px #ff66b2;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.9));
+}
+
+/* Уточки, которые идут по карточкам (Привязаны к CSS) */
+.skills-ducks-overlay {
+    position: absolute;
+    top: -60px; /* Выровняли с учетом увеличения яркости */
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 140%; 
+    height: auto;
+    pointer-events: none;
+    z-index: 200;
+    filter: drop-shadow(0 5px 15px rgba(255, 0, 128, 0.5));
+    animation: duck-walk-hover 3.5s ease-in-out infinite;
+}
+
+@keyframes duck-walk-hover {
+    0%, 100% { transform: translateX(-50%) translateY(0) rotate(-2deg); }
+    50% { transform: translateX(-50%) translateY(5px) rotate(2deg); } 
+}
+
+/* Уточка-студент у Next.js */
+.skills-duck-student {
+    position: absolute;
+    top: -60px; /* Подняли чуть выше по просьбе пользователя */
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 65%; 
+    height: auto;
+    pointer-events: none;
+    z-index: 200;
+    filter: drop-shadow(0 5px 15px rgba(255, 0, 128, 0.5));
+    animation: duck-student-hover 4s ease-in-out infinite;
+}
+
+@keyframes duck-student-hover {
+    0%, 100% { transform: translateX(-50%) translateY(0) scaleX(1); }
+    50% { transform: translateX(-50%) translateY(-5px) scaleX(1.05); } 
+}
+
+/* Оптимизация для Desktop 1920 */
+@media (min-width: 1900px) {
+    .skills-ducks-overlay {
+        width: 180%; 
+        top: -60px; /* Скорректировано для 1920 */
+        left: 10%;
+    }
+}
+
+/* Оптимизация для 2K экранов */
+@media (min-width: 2500px) {
+    .skills-ducks-overlay {
+        width: 200%; 
+        top: -80px; /* Скорректировано для 2K */
+        left: 5%;
+    }
+}
+
+/* Иконка-заглушка */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.4));
+}
+
+.skill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Трюк для перекраски черной SVG в нежно-ярко-розовый (#ff0080) */
+    filter: invert(11%) sepia(100%) saturate(6084%) hue-rotate(325deg) brightness(97%) contrast(107%);
+}
+
+/* Заглушка, если картинки нет */
+.icon-placeholder {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 6, 86, 0.1);
+    border: 2px dashed #ff0656;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #ff0656;
+}
+
+/* Название навыка */
+.skill-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2b0b14;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 20px;
+    }
+    
+    .skill-card {
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .skill-name {
+        font-size: 14px;
+    }
+}
+极功平衡

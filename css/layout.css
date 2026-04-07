@@ -1,0 +1,22 @@
+/* CRT EFFECTS */
+.crt-scanlines {
+    position: fixed; /* Остается на экране постоянно */
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+}
+
+.crt-vignette {
+    position: fixed; /* Виньетка всегда затемняет углы экрана */
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 999;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.4) 110%);
+}

@@ -1,0 +1,167 @@
+/* ======= HERO WRAPPER (Первый экран-контейнер) =======
+   Занимает ровно один экран. overflow:hidden обрезает все дочерние элементы —
+   полоски, уток — по нижнему краю. При скролле уезжает вверх целиком. */
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Ключевой момент: всё внутри обрезается по краям */
+}
+
+.hero-section {
+    position: absolute;
+    /* Возвращаем блок чуть ниже на больших мониторах, так как текста стало меньше */
+    top: max(150px, 22vh); 
+    /* Идеально выравниваем левый край по сетке навбара на любых экранах (теперь 1200px) */
+    left: max(5%, calc(50% - 600px)); 
+    transform: none; 
+    width: 100%; 
+    max-width: 1200px;
+    padding-left: 25px;
+    z-index: 1005; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    pointer-events: none; 
+}
+
+.hero-section > * {
+    pointer-events: auto; 
+}
+
+.hero-title.shiny-text {
+    font-family: 'Pixelmania', sans-serif; 
+    font-size: clamp(20px, 3vw, 45px); /* Адаптивный размер заголовка */
+    font-weight: 400; 
+    text-transform: uppercase; 
+    margin: 0;
+    line-height: 1.1;
+    padding-bottom: 20px; 
+    letter-spacing: 2px;
+    
+    background: linear-gradient(
+        180deg, 
+        #ff0080 10%,   
+        #ffe6f2 48%,   
+        #800040 50%,   
+        #ff0080 90%    
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    -webkit-text-stroke: 1px #ffffff; 
+    filter: drop-shadow(0 4px 0 #5c0b2b) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6)); 
+}
+
+.hero-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 500;
+    color: #e5b5bb;
+    letter-spacing: 6px; 
+    white-space: nowrap; 
+    display: flex;
+    align-items: center;
+    /* RESPONSIVE FIX: Уменьшили гигантский отступ для 1920px экранов */
+    margin-bottom: 25px; 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pink-cursor {
+    display: inline-block;
+    width: 14px;
+    height: 1.1em;
+    background-color: #ff0656;
+    margin-left: 8px;
+    animation: blink-cursor 1s step-end infinite;
+    box-shadow: 0 0 10px #ff0656, 0 0 20px #ff2a9d;
+    border-radius: 2px;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-bio {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 18px; 
+    font-weight: 400; 
+    /* RESPONSIVE FIX: Ограничена ширина текста для красоты и чтобы не мешать утке (600px) */
+    margin-bottom: 220px; /* Опустили кнопки пониже для 1920px (было 150px) */
+    max-width: 600px; 
+    line-height: 1.6; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* СПЕЦИАЛЬНО ДЛЯ 2K ЭКРАНОВ — Выравниваем по утке */
+@media (min-width: 2000px) {
+    .hero-section {
+        top: 20%; 
+    }
+    .hero-bio {
+        margin-bottom: 400px; /* Приподняли кнопки выше (было 550px) */
+        max-width: 500px;     /* Текст стал чуть поуже */
+    }
+}
+
+.hero-bio p {
+    margin: 0 0 15px 0; 
+}
+.hero-bio p:last-child {
+    margin-bottom: 0;
+}
+
+/* СПЕЦИАЛЬНО ДЛЯ 2K ЭКРАНОВ — Выравниваем по утке */
+@media (min-width: 2000px) {
+    .hero-section {
+        top: 20%; 
+    }
+    .hero-bio {
+        margin-bottom: 340px; /* Приподняли кнопки чуть выше (было 380px) */
+        max-width: 500px;     
+    }
+}
+
+.highlight-tech {
+    color: #ff0656; 
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 6, 86, 0.4); 
+}
+
+/* RESPONSIVE FIXES FOR MOBILE STACKING */
+@media (max-width: 768px) {
+    .hero-section {
+        left: 5%;
+        width: 90%;
+        max-width: 100%;
+        top: 100px; /* Прибит строго под навбаром 60px */
+        padding-left: 0; 
+    }
+    
+    .hero-title.shiny-text {
+        font-size: clamp(20px, 8vw, 40px); /* Уменьшили чтобы влез Pixelmania на 320px */
+        padding-bottom: 5px;
+        white-space: normal;
+        word-break: break-all; /* Если экран совсем узкий, даем ломать слово */
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 20px; 
+        letter-spacing: 2px;
+        white-space: normal; /* На 320px позволяем перенести */
+    }
+    
+    .hero-bio {
+        font-size: 14px;
+        line-height: 1.4; 
+        margin-bottom: 30px; 
+    }
+    
+    .hero-bio p {
+        margin-bottom: 10px; 
+    }
+}
