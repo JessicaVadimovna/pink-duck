@@ -59,7 +59,7 @@
     font-family: 'Oswald', sans-serif;
     font-size: clamp(20px, 3vw, 32px);
     font-weight: 500;
-    color: #e5b5bb;
+    color: #f0acaa; /* Обновленный цвет по просьбе пользователя */
     letter-spacing: 6px; 
     white-space: nowrap; 
     display: flex;

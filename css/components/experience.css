@@ -1,0 +1,323 @@
+/* ================= EXPERIENCE TIMELINE SECTION ================= */
+.experience-section {
+    position: relative;
+    width: 100%; /* На весь экран */
+    max-width: none;
+    margin: 40px 0 100px 0; 
+    padding: 20px 0 60px 0;
+    text-align: center;
+    z-index: 10;
+    overflow: hidden; /* Чтобы уточка не создавала скролл */
+}
+
+.experience-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    width: 90%;
+}
+
+.experience-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: #f0acaa; 
+    margin-bottom: 120px; 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(240, 172, 170, 0.4);
+}
+
+/* --- ТАЙМЛАЙН КОНТЕЙНЕР --- */
+.timeline-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px; /* Добавили воздух по краям */
+    margin-top: 100px;
+}
+
+/* ГОРЯЧАЯ ЛИНИЯ "РОЗОВОЕ ЗОЛОТО МЕТАЛЛИК" */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    top: 50px; 
+    left: 42px; /* Учитываем паддинг + половину дота */
+    right: 42px; 
+    height: 8px; 
+    background: linear-gradient(
+        90deg, 
+        #8a5a5e 0%, 
+        #d19597 10%, 
+        #fce8ea 30%, 
+        #ffffff 50%, 
+        #fce8ea 70%, 
+        #d19597 90%, 
+        #8a5a5e 100%
+    );
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(210, 150, 155, 0.4);
+    border-radius: 4px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+/* ЕДИНАЯ МЕТАЛЛИЧЕСКАЯ СТРЕЛКА */
+.timeline-container::after {
+    content: "";
+    position: absolute;
+    top: 50px; 
+    right: 22px; /* Ровно в конце линии */
+    width: 25px;
+    height: 30px;
+    background: #8a5a5e; /* Цвет конца градиента линии */
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%); /* Красивая острая стрелка */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* --- ОБЪЕКТ ТАЙМЛАЙНА --- */
+.timeline-item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    min-height: 250px; 
+}
+
+/* ЯРКО-РОЗОВЫЙ МАРКЕР (ТОЧКА) - БЕЗ ОБВОДКИ */
+.timeline-dot {
+    width: 44px;
+    height: 44px;
+    background: #ff0080; 
+    border-radius: 50%;
+    /* border убран по просьбе пользователя */
+    box-shadow: 
+        0 0 15px #ff0080,
+        0 0 25px rgba(255, 0, 128, 0.4);
+    margin: 28px 0; 
+    z-index: 5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.3);
+    box-shadow: 0 0 25px #ff0080, 0 0 45px #ff66b2;
+}
+
+/* --- ВЕРХНЯЯ ЧАСТЬ (УТОЧКА + КОМПАНИЯ) --- */
+.timeline-top {
+    position: absolute;
+    bottom: calc(100% - 35px); /* Подняли чуть выше (было 48px) */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: auto;
+    padding-bottom: 0;
+    left: 50%;
+    transform: translateX(-40px); 
+}
+
+.timeline-duck {
+    height: 90px;
+    width: auto;
+    margin-bottom: -5px; /* Уточка чуть-чуть утапливается в дот для реализма */
+    margin-right: 15px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.timeline-item:hover .timeline-duck {
+    transform: translateY(-5px) rotate(5deg);
+}
+
+.timeline-info {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.timeline-company {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff0080;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.timeline-role {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* --- НИЖНЯЯ ЧАСТЬ (ОПИСАНИЕ) --- */
+.timeline-content {
+    margin-top: 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #d1d1d1;
+    max-width: 250px;
+    margin-bottom: 20px;
+}
+
+/* КНОПКА СКАЧИВАНИЯ (PDF) */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    background: transparent;
+    border: 2px solid #f0acaa;
+    border-radius: 6px;
+    color: #f0acaa;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(240, 172, 170, 0.1);
+}
+
+.btn-download:hover {
+    background: #f0acaa;
+    color: #1a0110;
+    box-shadow: 0 0 20px #f0acaa, 0 0 40px rgba(240, 172, 170, 0.3);
+    transform: translateY(-2px);
+}
+
+/* PDF Иконка (простая эмуляция через CSS) */
+.pdf-icon {
+    display: inline-block;
+    width: 14px;
+    height: 18px;
+    background: currentColor;
+    clip-path: polygon(0% 0%, 70% 0%, 100% 30%, 100% 100%, 0% 100%);
+    position: relative;
+}
+
+.pdf-icon::before {
+    content: "PDF";
+    font-size: 6px;
+    color: #1a0110;
+    position: absolute;
+    bottom: 2px;
+    left: 1px;
+}
+
+/* --- АДАПТИВ ДЛЯ МОБИЛОК (ВЕРТИКАЛЬНЫЙ СТЕК) --- */
+@media (max-width: 992px) {
+    .timeline-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 220px; /* Место для контента сверху/снизу */
+        padding: 50px 0;
+    }
+
+    .timeline-container::before {
+        width: 6px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-container::after {
+        top: auto;
+        bottom: -30px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) rotate(90deg);
+    }
+
+    .timeline-item {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .timeline-top {
+        position: relative;
+        bottom: 0;
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+    }
+}
+
+/* --- ДЕКОР: ВЫГЛЯДЫВАЮЩАЯ УТОЧКА --- */
+.experience-decor {
+    position: absolute;
+    top: 55%;
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.peeking-duck {
+    height: 280px; /* Сделали значительно больше (было 180px) */
+    width: auto;
+    /* Уточка выглядывает больше (было 45%) */
+    transform: translateX(15%) rotate(-5deg);
+    transition: transform 0.4s ease;
+    filter: drop-shadow(-15px 0 25px rgba(0,0,0,0.4));
+    animation: duck-peek-float 5s ease-in-out infinite;
+}
+
+.experience-section:hover .peeking-duck {
+    transform: translateX(5%) rotate(0deg);
+}
+
+@keyframes duck-peek-hide-seek {
+    0% { transform: translateX(100%) rotate(-5deg); } /* Полностью спрятана */
+    30% { transform: translateX(15%) rotate(0deg); } /* Медленно вышла */
+    90% { transform: translateX(15%) rotate(0deg); } /* Ждет... */
+    100% { transform: translateX(100%) rotate(-10deg); } /* Резко прячется */
+}
+
+.peeking-duck {
+    height: 280px;
+    width: auto;
+    transform: translateX(100%); /* По дефолту спрятана */
+    transition: transform 0.4s ease;
+    filter: drop-shadow(-15px 0 25px rgba(0,0,0,0.4));
+    animation: duck-peek-hide-seek 8s ease-in-out infinite;
+}
+
+.experience-section:hover .peeking-duck {
+    transform: translateX(10%) rotate(0deg); /* При наведении выходит чуть больше */
+}
+
+/* 2K Экран — еще крупнее */
+@media (min-width: 2000px) {
+    .peeking-duck {
+        height: 380px;
+    }
+    
+    @keyframes duck-peek-hide-seek {
+        0% { transform: translateX(100%) rotate(-5deg); }
+        30% { transform: translateX(10%) rotate(0deg); }
+        90% { transform: translateX(10%) rotate(0deg); }
+        100% { transform: translateX(100%) rotate(-10deg); }
+    }
+}
+

@@ -1,0 +1,130 @@
+/* ================= INTERACTIVE FOOTER ================= */
+.footer-section {
+    position: relative;
+    width: 100%;
+    padding: 150px 0 60px 0;
+    background: transparent; /* Прозрачный фон */
+    overflow: hidden;
+    z-index: 20;
+}
+
+/* --- РОЗОВОЕ ЗОЛОТО ЛИНИЯ --- */
+.footer-line-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.footer-line {
+    flex: 1;
+    height: 10px; /* Сделали толще */
+    background: linear-gradient(135deg, #fce8ea 0%, #d19597 50%, #8a5a5e 100%);
+    border: 2px solid #000;
+    box-shadow: 
+        0 0 15px rgba(209, 149, 151, 0.5),
+        0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    position: relative;
+}
+
+/* --- ТОЛПА УТОЧЕК НА ЛИНИИ --- */
+.line-duck-crowd {
+    position: absolute;
+    top: -45px; /* Сажаем прямо НА линию */
+    left: 5%;
+    display: flex;
+    gap: 40px;
+    pointer-events: none;
+}
+
+.small-line-duck {
+    height: 45px; /* Увеличили */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+    transform-origin: bottom center;
+    animation: duck-wobble-subtle 4s ease-in-out infinite alternate;
+}
+
+/* --- ЖИДКАЯ ЛУЖА (БОЛЬШАЯ) --- */
+.footer-puddle-container {
+    position: relative;
+    width: 400px; /* Увеличили лужу */
+    height: 180px;
+    margin-left: -80px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.puddle-img {
+    width: 110%;
+    height: auto;
+    filter: drop-shadow(0 0 30px rgba(255, 0, 128, 0.4));
+}
+
+/* --- УТОЧКА В ЛУЖЕ (БОЛЬШАЯ) --- */
+.puddle-duck-wrapper {
+    position: absolute;
+    top: -20px; /* Глубже в луже */
+    left: 55%;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: puddle-duck-drift 6s ease-in-out infinite alternate;
+}
+
+.puddle-duck {
+    height: 130px; /* Увеличили уточку */
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4));
+}
+
+@keyframes puddle-duck-drift {
+    0% { transform: translate(-50%, 0) rotate(3deg); }
+    100% { transform: translate(-40%, 15px) rotate(-3deg); }
+}
+
+/* --- КРЕДИТЫ (Made + Ducks) --- */
+.footer-credits {
+    margin-top: 60px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px; /* Крупнее */
+    color: #fce8ea;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.credit-duck-main {
+    height: 60px; /* Уточка после имени */
+    filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.3));
+    margin-left: 10px;
+}
+
+.credit-duck-crown {
+    height: 50px; /* Корона перед Made */
+    margin-right: 10px;
+}
+
+.heart-icon {
+    color: #ff0080;
+    animation: pulse-heart 1.5s ease-in-out infinite;
+}
+
+/* --- АДАПТИВ --- */
+@media (max-width: 992px) {
+    .footer-puddle-container { width: 300px; }
+    .puddle-duck { height: 100px; }
+    .small-line-duck { height: 35px; }
+}
+
+@media (max-width: 600px) {
+    .footer-line-wrapper { flex-direction: column; gap: 40px; }
+    .footer-puddle-container { margin-left: 0; }
+    .footer-credits { font-size: 14px; flex-wrap: wrap; }
+}

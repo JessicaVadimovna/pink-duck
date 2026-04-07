@@ -1,0 +1,261 @@
+/* ================= PROJECTS GRID SECTION ================= */
+.projects-section {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto 120px auto; 
+    padding: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.projects-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #f0acaa; 
+    margin-bottom: 80px; 
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-shadow: 0 0 20px rgba(240, 172, 170, 0.5);
+}
+
+/* --- GRID LAYOUT --- */
+.projects-grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 20px;
+}
+
+/* --- PEEKING DUCK MASCOT (LEFT) --- */
+.projects-mascot {
+    position: absolute;
+    left: -120px;
+    top: 50px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.projects-duck-peek {
+    height: 180px;
+    transform: rotate(15deg);
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+/* --- PROJECT CARD --- */
+.project-card {
+    position: relative;
+    background: rgba(30, 0, 40, 0.4);
+    border: 2px solid #ff0080;
+    border-radius: 12px;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible; /* To allow tape to show */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.3);
+}
+
+/* --- IMAGE & TAPE --- */
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-bottom: 2px solid #ff0080;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.1);
+}
+
+/* MASKING TAPE */
+.project-tape {
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    background: rgba(240, 172, 170, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.3),
+        inset 0 0 10px rgba(255,255,255,0.2);
+    z-index: 5;
+    pointer-events: none;
+    clip-path: polygon(
+        2% 10%, 90% 0%, 100% 15%, 95% 45%, 100% 80%, 85% 100%,
+        10% 95%, 0% 70%, 5% 40%, 0% 15%
+    );
+}
+
+.tape-left {
+    top: -10px;
+    left: -35px;
+    transform: rotate(-35deg);
+}
+
+.tape-right {
+    top: -10px;
+    right: -35px;
+    transform: rotate(35deg);
+}
+
+/* --- CARD CONTENT --- */
+.project-info {
+    padding: 20px;
+    width: 100%;
+    flex: 1;
+}
+
+.project-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* TECH PILLS */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag-pill {
+    background: rgba(255, 0, 128, 0.1);
+    border: 1px solid #ff0080;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+    color: #ff0080;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- CUSTOM DROPDOWN BUTTON --- */
+.project-actions {
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.btn-view {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+    padding: 8px 15px;
+    background: transparent;
+    border: 2px solid #ff0080;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.btn-view::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.btn-view:hover {
+    background: rgba(255, 0, 128, 0.2);
+    box-shadow: 0 0 10px rgba(255, 0, 128, 0.4);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 20px;
+    width: 130px;
+    background: rgba(30, 0, 40, 0.95);
+    border: 1px solid #ff0080;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s;
+    z-index: 100;
+    padding: 8px 0;
+    backdrop-filter: blur(10px);
+}
+
+.project-actions:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.project-actions:hover .btn-view::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.2s;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 0, 128, 0.15);
+    color: #ff0080;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .projects-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects-mascot {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid-container {
+        grid-template-columns: 1fr;
+    }
+    .projects-title {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .projects-section {
+        max-width: 1400px;
+    }
+    .project-image-wrapper {
+        height: 250px;
+    }
+}

@@ -11,7 +11,7 @@
     font-family: 'Oswald', sans-serif;
     font-size: 38px;
     font-weight: 600;
-    color: #ffffff;
+    color: #f0acaa; /* Обновленный цвет */
     margin-bottom: 80px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -218,4 +218,4 @@
         font-size: 14px;
     }
 }
-极功平衡
+}
