@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="css/components/resume.css">
     <link rel="stylesheet" href="css/components/contact.css">
     <link rel="stylesheet" href="css/components/footer.css">
-    <link rel="stylesheet" href="css/components/marquee.css">
     <link rel="stylesheet" href="css/components/ducks.css">
 </head>
 <body>
@@ -59,34 +58,23 @@
 
     <!-- ===================== HERO ===================== -->
     <div class="hero-wrapper">
-
-        <!-- Diagonal Stripes Top-Left -->
         <div class="stripe-container tl">
             <div class="stripe tl-1"></div>
             <div class="stripe tl-2"></div>
             <div class="stripe tl-3"></div>
             <div class="stripe tl-4"></div>
         </div>
-
-        <!-- Diagonal Stripes Bottom-Right -->
         <div class="stripe-container tr">
             <div class="stripe tr-1"></div>
             <div class="stripe tr-2"></div>
             <div class="stripe tr-3"></div>
             <div class="stripe tr-4"></div>
         </div>
-
-        <!-- Утка в короне (теперь отдельно, чтобы не пропадала) -->
         <img src="assets/img/duck_crown.png" alt="Утка в короне" class="duck-crown">
-
-
-        <!-- Duck with Glasses (Right side, parallax) -->
         <div class="duck-glasses-wrapper parallax" data-speed="0.03">
             <img src="assets/img/duck_glasses.png" alt="Duck with Glasses">
             <div class="duck-sparkle"></div>
         </div>
-
-        <!-- Hero Text (Left side) -->
         <div class="hero-section">
             <h1 class="hero-title shiny-text">JessiLis</h1>
             <p class="hero-subtitle">Frontend Developer<span class="pink-cursor"></span></p>
@@ -99,8 +87,6 @@
                 <a href="#projects" class="btn btn-secondary" id="hero-btn-projects">View Work</a>
             </div>
         </div>
-
-        <!-- Holographic Marquee (Bottom) -->
         <div class="marquee-wrapper">
             <div class="marquee-content">
                 <span class="marquee-item">🦆 UI/UX DESIGN</span>
@@ -117,24 +103,16 @@
                 <span class="marquee-item">🦆 FRONTEND</span>
             </div>
         </div>
-
-    </div><!-- end .hero-wrapper -->
-
+    </div>
 
     <!-- ===================== ABOUT ===================== -->
     <section id="about" class="about-section">
         <div class="about-card">
-
-            <!-- Masking Tape Decorations -->
             <div class="tape tape-v1 top-left"></div>
             <div class="tape tape-v2 top-right"></div>
             <div class="tape tape-v3 bottom-left"></div>
             <div class="tape tape-v1 bottom-right"></div>
-
-            <!-- CRT Overlay -->
             <div class="about-crt-overlay"></div>
-
-            <!-- Text Content -->
             <div class="about-content">
                 <h2 class="about-title">ABOUT ME</h2>
                 <div class="about-text">
@@ -143,17 +121,12 @@
                     <p>Когда не пишу код — рисую, слушаю lo-fi и общаюсь с резиновыми уточками. 🦆</p>
                 </div>
             </div>
-
-            <!-- Overflow Image -->
             <div class="about-image-container">
                 <img src="assets/img/duck-pc.png" alt="Duck with PC" class="about-comp-img">
             </div>
-
-            <!-- Duck on cloud (hangs below About section) -->
             <div class="decor-layer">
                 <img src="assets/img/duck_cloud.png" alt="Duck on cloud" class="duck-cloud-left">
             </div>
-
         </div>
     </section>
 
@@ -161,93 +134,64 @@
     <section id="skills" class="skills-section">
         <h2 class="skills-title">TECH STACK</h2>
         <div class="skills-grid">
-
-            <!-- 1. HTML -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg" alt="HTML5"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div>
                 <p class="skill-name">HTML</p>
             </div>
-
-            <!-- 2. CSS (+ Толпа уточек) -->
             <div class="skill-card">
                 <img src="assets/img/ducks.png" class="skills-ducks-overlay" alt="Ducks Walking">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg" alt="CSS3"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"></div>
                 <p class="skill-name">CSS</p>
             </div>
-
-            <!-- 3. JavaScript -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" alt="JavaScript"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
                 <p class="skill-name">JavaScript</p>
             </div>
-
-            <!-- 4. TypeScript -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/typescript.svg" alt="TypeScript"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"></div>
                 <p class="skill-name">TypeScript</p>
             </div>
-
-            <!-- 5. React -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg" alt="React"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div>
                 <p class="skill-name">React</p>
             </div>
-
-            <!-- 6. Next.js (+ Уточка-студент) -->
             <div class="skill-card">
                 <img src="assets/img/duck_student.png" class="skills-duck-student" alt="Duck Student">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg" alt="Next.js"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"></div>
                 <p class="skill-name">Next.js</p>
             </div>
-
-            <!-- 7. Tailwind -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tailwindcss.svg" alt="Tailwind CSS"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"></div>
                 <p class="skill-name">Tailwind</p>
             </div>
-
-            <!-- 8. Git -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg" alt="Git"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
                 <p class="skill-name">Git</p>
             </div>
-
-            <!-- 9. Figma -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/figma.svg" alt="Figma"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"></div>
                 <p class="skill-name">Figma</p>
             </div>
-
-            <!-- 10. Node.js -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" alt="Node.js"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"></div>
                 <p class="skill-name">Node.js</p>
             </div>
-
-            <!-- 11. REST API -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/insomnia.svg" alt="REST API"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/insomnia/insomnia-original.svg" alt="REST API"></div>
                 <p class="skill-name">REST API</p>
             </div>
-
-            <!-- 12. Vite -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vite.svg" alt="Vite"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite"></div>
                 <p class="skill-name">Vite</p>
             </div>
-
-            <!-- 13. SASS -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sass.svg" alt="SASS"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS"></div>
                 <p class="skill-name">SASS</p>
             </div>
-
-            <!-- 14. Redux -->
             <div class="skill-card">
-                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/redux.svg" alt="Redux"></div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux"></div>
                 <p class="skill-name">Redux</p>
             </div>
-
         </div>
     </section>
 
@@ -255,64 +199,59 @@
     <section id="experience" class="experience-section">
         <div class="experience-content-wrapper">
             <h2 class="experience-title">EXPERIENCE TIMELINE</h2>
-            
             <div class="timeline-container">
                 
-                <!-- 1. Junior (Left) -->
+                <!-- 1. Alfa Ecosystem -->
                 <div class="timeline-item">
                     <div class="timeline-top">
-                        <img alt="Junior Duck" class="timeline-duck" src="assets/img/duck_helmet.png">
+                        <img alt="Engineer Duck" class="timeline-duck" src="assets/img/duck_helmet.png">
                         <div class="timeline-info">
-                            <h3 class="timeline-company">FreelanceHub</h3>
-                            <p class="timeline-role">Junior Developer</p>
+                            <h3 class="timeline-company">Alfa Ecosystem</h3>
+                            <p class="timeline-role">Frontend Engineer (Internship)</p>
                         </div>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <p class="timeline-desc">Built custom websites and collaborated on open-source projects.</p>
-                        <a class="btn-download" download href="#">
-                            <span class="pdf-icon"></span> Download Confirmation
+                        <p class="timeline-period">авг. 2024 — янв. 2025 (6 мес.) · Удаленно</p>
+                        <ul class="timeline-list">
+                            <li>Разработала библиотеку <strong>UI-компонентов</strong> (15+ элементов) с унифицированным API → ускорила разработку фич на <strong>~25%</strong>.</li>
+                            <li>Внедрила <strong>React Hook Form + Zod</strong> для валидации, что снизило ошибки пользовательского ввода на <strong>40%</strong>.</li>
+                            <li>Создавала адаптивные интерфейсы и интегрировала <strong>WebSocket/REST API</strong> совместно с Backend-командой.</li>
+                            <li>Участвовала в развитии <strong>UI-kit</strong> и проводила ревью кода, обеспечивая консистентность проекта.</li>
+                            <li>Проектировала архитектуру по методологии <strong>Feature-Sliced Design (FSD)</strong> и занималась оптимизацией производительности.</li>
+                        </ul>
+                        <a class="btn-download" download href="assets/Alfa_Recommendation_Letter.pdf">
+                            <span class="pdf-icon"></span> Рекомендательное письмо.pdf
                         </a>
                     </div>
                 </div>
 
-                <!-- 2. Middle (Center) -->
+                <!-- 2. Tiddle (Current) -->
                 <div class="timeline-item">
                     <div class="timeline-top">
-                        <img alt="Middle Duck" class="timeline-duck" src="assets/img/duck_tie.png">
+                        <img alt="AI Duck" class="timeline-duck" src="assets/img/duck_crown.png">
                         <div class="timeline-info">
-                            <h3 class="timeline-company">WebForge Agency</h3>
-                            <p class="timeline-role">Frontend Developer</p>
+                            <h3 class="timeline-company">Tiddle</h3>
+                            <p class="timeline-role">Frontend Web Developer</p>
                         </div>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <p class="timeline-desc">Developed responsive websites and interactive UIs for various clients.</p>
-                        <a class="btn-download" download href="#">
-                            <span class="pdf-icon"></span> Download Confirmation
+                        <p class="timeline-period">авг. 2024 — апр. 2025 (9 мес.) · Удаленно</p>
+                        <ul class="timeline-list">
+                            <li>Внедряла ИИ-инструменты на базе <strong>GPT</strong> в приложение для пар, помогающее отслеживать динамику отношений.</li>
+                            <li>Разработала функционал <strong>«ИИ-медиатор»</strong>, который помогает партнерам находить общие точки и конструктивно мириться.</li>
+                            <li>Реализовала систему анализа «состояния» отношений и <strong>персонализированные советы</strong> по их улучшению от нейросети.</li>
+                            <li>Интегрировала сложные <strong>AI-промпты</strong> во фронтенд для обеспечения психологически корректных и полезных ответов системы.</li>
+                        </ul>
+                        <a class="btn-download" download href="assets/Dzhessika_Emelyanova_Rekomendatelnoe_pismo_1_.pdf">
+                            <span class="pdf-icon"></span> Рекомендательное письмо.pdf
                         </a>
-                    </div>
-                </div>
-
-                <!-- 3. Freelance (Right/Current) -->
-                <div class="timeline-item">
-                    <div class="timeline-top">
-                        <img alt="Senior Duck" class="timeline-duck" src="assets/img/duck_briefcase.png">
-                        <div class="timeline-info">
-                            <h3 class="timeline-company">PixelCraft Studio</h3>
-                            <p class="timeline-role">Freelance / Senior Dev</p>
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-desc">Leading frontend development for retro-inspired web apps.</p>
                     </div>
                 </div>
 
             </div>
         </div>
-
-        <!-- Peeking Duck Decor (Right side) -->
         <div class="experience-decor">
             <img src="assets/img/duck_peeking_out.png" alt="Peeking Duck" class="peeking-duck">
         </div>
@@ -321,15 +260,11 @@
     <!-- ===================== FEATURED PROJECTS ===================== -->
     <section id="projects" class="projects-section">
         <h2 class="projects-title">FEATURED PROJECTS</h2>
-
         <div class="projects-grid-container">
-            
-            <!-- Left Mascot -->
             <div class="projects-mascot">
                 <img src="assets/img/duck_peeking_out.png" alt="Mascot Duck" class="projects-duck-peek">
             </div>
-
-            <!-- Project 1: Batro Arrado -->
+            
             <div class="project-card">
                 <div class="project-tape tape-left"></div>
                 <div class="project-tape tape-right"></div>
@@ -339,249 +274,181 @@
                 <div class="project-info">
                     <h3 class="project-name">Batro Arrado Game</h3>
                     <div class="project-tags">
-                        <span class="tag-pill">HTPB</span>
-                        <span class="tag-pill">CAA</span>
-                        <span class="tag-pill">FB</span>
+                        <span class="tag-pill">HTPB</span><span class="tag-pill">CAA</span><span class="tag-pill">FB</span>
                     </div>
                 </div>
                 <div class="project-actions">
                     <button class="btn-view">View</button>
                     <div class="dropdown-menu">
-                        <a href="https://github.com" target="_blank" class="dropdown-item">GitHub</a>
-                        <a href="https://demo.com" target="_blank" class="dropdown-item">Live Demo</a>
+                        <a href="#" class="dropdown-item">GitHub</a>
+                        <a href="#" class="dropdown-item">Live Demo</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2: E-Conserce Platform -->
             <div class="project-card">
                 <div class="project-tape tape-left"></div>
                 <div class="project-tape tape-right"></div>
                 <div class="project-image-wrapper">
-                    <img src="assets/img/project_shop.png" alt="E-Conserce Platform" class="project-img">
+                    <img src="assets/img/project_shop.png" alt="E-Commerce" class="project-img">
                 </div>
                 <div class="project-info">
-                    <h3 class="project-name">E-Conserce Platform</h3>
+                    <h3 class="project-name">E-Commerce Platform</h3>
                     <div class="project-tags">
-                        <span class="tag-pill">HUMO</span>
-                        <span class="tag-pill">React.js</span>
-                        <span class="tag-pill">Python</span>
+                        <span class="tag-pill">HUMO</span><span class="tag-pill">React</span><span class="tag-pill">Python</span>
                     </div>
                 </div>
                 <div class="project-actions">
                     <button class="btn-view">View</button>
                     <div class="dropdown-menu">
-                        <a href="https://github.com" target="_blank" class="dropdown-item">GitHub</a>
-                        <a href="https://demo.com" target="_blank" class="dropdown-item">Live Demo</a>
+                        <a href="#" class="dropdown-item">GitHub</a>
+                        <a href="#" class="dropdown-item">Live Demo</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3: PirateDeveloper -->
             <div class="project-card">
                 <div class="project-tape tape-left"></div>
                 <div class="project-tape tape-right"></div>
                 <div class="project-image-wrapper">
-                    <img src="assets/img/project_pirate.png" alt="PirateDeveloper" class="project-img">
+                    <img src="assets/img/project_pirate.png" alt="Pirate" class="project-img">
                 </div>
                 <div class="project-info">
                     <h3 class="project-name">PirateDeveloper</h3>
                     <div class="project-tags">
-                        <span class="tag-pill">DD_30</span>
-                        <span class="tag-pill">POB</span>
-                        <span class="tag-pill">OPT</span>
+                        <span class="tag-pill">DD_30</span><span class="tag-pill">POB</span><span class="tag-pill">OPT</span>
                     </div>
                 </div>
                 <div class="project-actions">
                     <button class="btn-view">View</button>
                     <div class="dropdown-menu">
-                        <a href="https://github.com" target="_blank" class="dropdown-item">GitHub</a>
-                        <a href="https://demo.com" target="_blank" class="dropdown-item">Live Demo</a>
+                        <a href="#" class="dropdown-item">GitHub</a>
+                        <a href="#" class="dropdown-item">Live Demo</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 4: Fixel Art Editor -->
             <div class="project-card">
                 <div class="project-tape tape-left"></div>
                 <div class="project-tape tape-right"></div>
                 <div class="project-image-wrapper">
-                    <img src="assets/img/project_editor.png" alt="Fixel Art Editor" class="project-img">
+                    <img src="assets/img/project_editor.png" alt="Editor" class="project-img">
                 </div>
                 <div class="project-info">
-                    <h3 class="project-name">Fixel Art Editor</h3>
+                    <h3 class="project-name">Pixel Art Editor</h3>
                     <div class="project-tags">
-                        <span class="tag-pill">Nastc</span>
-                        <span class="tag-pill">Cannon URS</span>
+                        <span class="tag-pill">Canvas</span><span class="tag-pill">React</span>
                     </div>
                 </div>
                 <div class="project-actions">
                     <button class="btn-view">View</button>
                     <div class="dropdown-menu">
-                        <a href="https://github.com" target="_blank" class="dropdown-item">GitHub</a>
-                        <a href="https://demo.com" target="_blank" class="dropdown-item">Live Demo</a>
+                        <a href="#" class="dropdown-item">GitHub</a>
+                        <a href="#" class="dropdown-item">Live Demo</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 5: Portfolio V1 -->
             <div class="project-card">
                 <div class="project-tape tape-left"></div>
                 <div class="project-tape tape-right"></div>
                 <div class="project-image-wrapper">
-                    <img src="assets/img/project_portfolio_v1.png" alt="Portfolio V1" class="project-img">
+                    <img src="assets/img/project_portfolio_v1.png" alt="Portfolio" class="project-img">
                 </div>
                 <div class="project-info">
                     <h3 class="project-name">Portfolio V1</h3>
                     <div class="project-tags">
-                        <span class="tag-pill">HTML</span>
-                        <span class="tag-pill">CSS</span>
+                        <span class="tag-pill">HTML</span><span class="tag-pill">CSS</span>
                     </div>
                 </div>
                 <div class="project-actions">
                     <button class="btn-view">View</button>
                     <div class="dropdown-menu">
-                        <a href="https://github.com" target="_blank" class="dropdown-item">GitHub</a>
-                        <a href="https://demo.com" target="_blank" class="dropdown-item">Live Demo</a>
+                        <a href="#" class="dropdown-item">GitHub</a>
+                        <a href="#" class="dropdown-item">Live Demo</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 6: Weather App -->
             <div class="project-card">
                 <div class="project-tape tape-left"></div>
                 <div class="project-tape tape-right"></div>
                 <div class="project-image-wrapper">
-                    <img src="assets/img/project_weather.png" alt="Weather App" class="project-img">
+                    <img src="assets/img/project_weather.png" alt="Weather" class="project-img">
                 </div>
                 <div class="project-info">
                     <h3 class="project-name">Weather App</h3>
                     <div class="project-tags">
-                        <span class="tag-pill">P66</span>
-                        <span class="tag-pill">RS</span>
+                        <span class="tag-pill">API</span><span class="tag-pill">JS</span>
                     </div>
                 </div>
                 <div class="project-actions">
                     <button class="btn-view">View</button>
                     <div class="dropdown-menu">
-                        <a href="https://github.com" target="_blank" class="dropdown-item">GitHub</a>
-                        <a href="https://demo.com" target="_blank" class="dropdown-item">Live Demo</a>
+                        <a href="#" class="dropdown-item">GitHub</a>
+                        <a href="#" class="dropdown-item">Live Demo</a>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- ===================== DOWNLOAD RESUME ===================== -->
     <section id="resume" class="resume-section">
         <div class="resume-banner">
-            
-            <!-- Mascots -->
             <img src="assets/img/duck_briefcase.png" alt="Resume Duck" class="resume-duck duck-left">
             <img src="assets/img/duck_helmet.png" alt="Party Duck" class="resume-duck duck-right">
-            
-            <!-- Clouds Decor -->
-            <div class="resume-clouds">
-                <img src="assets/img/duck_cloud.png" alt="Cloud Duck" class="duck-cloud-small">
-            </div>
-
             <h2 class="resume-title">DOWNLOAD MY RESUME</h2>
-
             <div class="resume-buttons">
-                <a href="assets/resume.pdf" class="btn-resume" download>
-                    <span style="font-size: 20px; margin-right: 10px;">💾</span> Download CV
-                </a>
-                <a href="assets/resume.pdf" class="btn-resume" target="_blank">
-                    <span style="font-size: 20px; margin-right: 10px;">⛏️</span> Open in New Tab
-                </a>
+                <a href="assets/resume.pdf" class="btn-resume" download>💾 Download CV</a>
+                <a href="assets/resume.pdf" class="btn-resume" target="_blank">⛏️ Open in Tab</a>
             </div>
-
         </div>
     </section>
 
     <!-- ===================== LET'S CONNECT ===================== -->
     <section id="contact" class="contact-section">
         <h2 class="contact-title">LET'S CONNECT</h2>
-
         <div class="contact-grid">
-            
-            <!-- Telegram -->
             <div class="contact-item">
                 <a href="https://t.me/yourusername" class="contact-icon-box" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.13-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                    <svg viewBox="0 0 24 24" width="30" height="30"><path fill="#ff0080" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.13-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
                 </a>
                 <span class="contact-label">Telegram</span>
             </div>
-
-            <!-- GitHub -->
             <div class="contact-item">
-                <a href="https://github.com/yourusername" class="contact-icon-box" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48 0-.24-.01-.86-.01-1.69-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.08.39-1.97 1.03-2.67-.1-.25-.45-1.26.1-2.63 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.63.64.7 1.03 1.59 1.03 2.67 0 3.82-2.34 4.66-4.57 4.91.36.31.68.92.68 1.85 0 1.34-.01 2.42-.01 2.75 0 .27.18.58.69.48C19.13 20.17 22 16.42 22 12c0-5.53-4.47-10-10-10z"/></svg>
+                <a href="#" class="contact-icon-box" target="_blank">
+                    <svg viewBox="0 0 24 24" width="30" height="30"><path fill="#ff0080" d="M12 2C6.47 2 2 6.47 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48 0-.24-.01-.86-.01-1.69-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.08.39-1.97 1.03-2.67-.1-.25-.45-1.26.1-2.63 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.63.64.7 1.03 1.59 1.03 2.67 0 3.82-2.34 4.66-4.57 4.91.36.31.68.92.68 1.85 0 1.34-.01 2.42-.01 2.75 0 .27.18.58.69.48C19.13 20.17 22 16.42 22 12c0-5.53-4.47-10-10-10z"/></svg>
                 </a>
                 <span class="contact-label">GitHub</span>
             </div>
-
-            <!-- LinkedIn -->
-            <div class="contact-item">
-                <a href="https://linkedin.com/in/yourusername" class="contact-icon-box" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5V13.2a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                </a>
-                <span class="contact-label">LinkedIn</span>
-            </div>
-
-            <!-- Email -->
-            <div class="contact-item">
-                <a href="mailto:your@email.com" class="contact-icon-box">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                </a>
-                <span class="contact-label">Email</span>
-            </div>
-
-            <!-- Discord -->
-            <div class="contact-item">
-                <a href="https://discordapp.com/users/yourid" class="contact-icon-box" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.419-2.157 2.419z"/></svg>
-                </a>
-                <span class="contact-label">Discord</span>
-            </div>
-
         </div>
     </section>
 
     <!-- ===================== INTERACTIVE FOOTER ===================== -->
     <footer id="footer" class="footer-section">
-        
         <div class="footer-line-wrapper">
-            <!-- Line with Duck Crowd -->
             <div class="footer-line">
                 <div class="line-duck-crowd">
-                    <img src="assets/img/duck_crown.png" alt="Crown Duck" class="small-line-duck">
-                    <img src="assets/img/duck_helmet.png" alt="Helmet Duo" class="small-line-duck">
-                    <img src="assets/img/duck_tie.png" alt="Tie Duck" class="small-line-duck">
+                    <img src="assets/img/duck_crown.png" alt="D1" class="small-line-duck">
+                    <img src="assets/img/duck_helmet.png" alt="D2" class="small-line-duck">
+                    <img src="assets/img/duck_tie.png" alt="D3" class="small-line-duck">
                 </div>
             </div>
-
-            <!-- Puddle with Parallax Duck -->
             <div class="footer-puddle-container">
                 <div class="puddle-duck-wrapper">
-                    <img src="assets/img/duck.png" alt="Floating Duck" class="puddle-duck">
+                    <img src="assets/img/duck.png" alt="Duck" class="puddle-duck">
                 </div>
-                <img src="assets/img/pink_water.png" alt="Liquid Puddle" class="puddle-img">
+                <img src="assets/img/pink_water.png" alt="Puddle" class="puddle-img">
             </div>
         </div>
-
-        <!-- Credits -->
         <div class="footer-credits">
-            <img src="assets/img/duck_crown.png" alt="Crown Duck" class="credit-duck-crown">
+            <img src="assets/img/duck_crown.png" alt="C" class="credit-duck-crown">
             <span>Made with <span class="heart-icon">❤️</span> by JessiLIs</span>
-            <img src="assets/img/duck_briefcase.png" alt="Business Duck" class="credit-duck-main">
+            <img src="assets/img/duck_briefcase.png" alt="B" class="credit-duck-main">
         </div>
-        
     </footer>
 
-    <!-- JS -->
     <script src="js/script.js"></script>
-
 </body>
 </html>
